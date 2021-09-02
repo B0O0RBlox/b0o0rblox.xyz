@@ -1,0 +1,22 @@
+{
+  "name": "b0o0r.xyz2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B0O0RBlox/b0o0r.xyz2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/B0O0RBlox/b0o0r.xyz2/issues"
+  },
+  "homepage": "https://github.com/B0O0RBlox/b0o0r.xyz2#readme",
+  "dependencies": {
+    "netlify": "^8.0.0"
+  }
+}

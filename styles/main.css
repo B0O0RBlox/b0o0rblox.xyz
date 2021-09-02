@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+	--black: #000;
+	--blue: #44627b;
+	--teal: #62929e;
+	--silver: #c6c5b9;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+nav {
+	font-family: 'Poppins', sans-serif;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.3s;
+	position: fixed;
+	margin: 0 auto;
+	display: flex;
+	padding: 15px;
+	height: 70px;
+	width: 100%;
+	z-index: 5;
+	top: 0;
+}
+
+body {
+	background-color: var(--black);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+}
+
+.logo h4 {
+	font-family: 'Homemade Apple', cursive;
+	font-weight: bolder;
+	padding-left: 3vw;
+	font-size: 25px;
+	letter-spacing: 5px;
+}
+
+.logo a {
+	color: var(--teal);
+	text-decoration: none;
+}
+
+.logo a:hover {
+	cursor: pointer;
+	color: var(--teal);
+	text-decoration: none;
+}
+
+.nav-links {
+	justify-content: space-around;
+	display: flex;
+	width: 25%;
+}
+
+.nav-links li {
+	list-style: none;
+}
+
+.nav-links li::after {
+	background: var(--teal);
+	border-radius: 10px;
+	transition: 0.5s;
+	display: block;
+	height: 2.5px;
+	margin: auto;
+	content: '';
+	width: 0%;
+}
+
+.nav-links li:hover::after {
+	width: 100%;
+}
+
+.nav-links a {
+	color: var(--silver);
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 2px;
+	font-size: 14px;
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.burger div {
+	background-color: var(--silver);
+	transition: all 0.3s ease;
+	border-radius: 20px;
+	margin: 4.5px;
+	width: 25px;
+	height: 3px;
+}
+
+#dynamic {
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 0;
+}
+
+@media screen and (max-width: 1241px) {
+	.nav-links {
+		justify-content: space-around;
+		display: flex;
+		width: 35%;
+	}
+
+	.nav-links a {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.nav-links {
+		justify-content: space-around;
+		display: flex;
+		width: 45%;
+	}
+
+	.nav-links a {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		overflow-x: hidden;
+		min-height: 80vh;
+	}
+
+	.nav-links {
+		transition: transform 0.5s ease-in;
+		background-color: var(--teal);
+		transform: translateX(100%);
+		flex-direction: column;
+		align-items: center;
+		position: fixed;
+		display: flex;
+		height: 100%;
+		width: 55%;
+		right: 0px;
+		top: 0vh;
+	}
+
+	.burger div {
+		background-color: var(--silver);
+		transition: all 0.3s ease;
+		margin: 5px;
+		width: 30px;
+		height: 3.5px;
+	}
+
+	.nav-links li {
+		opacity: 0;
+	}
+
+	.nav-links li::after {
+		background: var(--blue);
+	}
+
+	.nav-links a {
+		font-size: 18px;
+	}
+
+	.burger {
+		display: block;
+	}
+}
+
+.nav-active {
+	transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+	from {
+		transform: translateX(50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-6px, 7px);
+}
+
+.toggle .line2 {
+	opacity: 0;
+}
+
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
